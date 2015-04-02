@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>JetBrains</appname>
+    <prefix>com.jetbrains.</prefix>
+  </appdef>
+  <appdef>
+    <appname>SublimeText2</appname>
+    <prefix>com.sublimetext.</prefix>
+  </appdef>
+
+  <item>
+    <name>Programing mode</name>
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>カーソルの位置を動かす 1</name>
+      <identifier>programing.move_caret1</identifier>
+      <appendix>control+return で次の単語へカーソルを移動</appendix>
+      <autogen>__KeyToKey__ KeyCode::RETURN, VK_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
+      <appendix>shift+return で前の単語へカーソルを移動</appendix>
+      <autogen>__KeyToKey__ KeyCode::RETURN, VK_SHIFT, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
+      <appendix>command+return で control+return にバインドされていた機能を実行</appendix>
+      <autogen>__KeyToKey__ KeyCode::RETURN, VK_COMMAND, KeyCode::RETURN, VK_CONTROL</autogen>
+      <appendix>control+[] で左右へカーソルを移動</appendix>
+      <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_LEFT, VK_CONTROL, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_RIGHT, VK_CONTROL, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>カーソルの位置を動かす 2</name>
+      <identifier>programing.move_caret2</identifier>
+      <appendix>control+[ で前の単語 control+] で次の単語へカーソルを移動</appendix>
+      <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_LEFT, VK_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::JIS_BRACKET_RIGHT, VK_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>英数キーをコマンドキーとしても動作させる</name>
+      <appendix>(+ 単独で英数キーを押した場合は、英数キーとして機能させる)</appendix>
+      <identifier>remap.jis_eisuu2commandL_eisuu_cp</identifier>
+      <autogen>__KeyOverlaidModifier__ KeyCode::JIS_EISUU, KeyCode::COMMAND_L, KeyCode::JIS_EISUU</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>Vim キーバインド</name>
+      <appendix>Command_L+hjkl to Left/Down/Up/Right</appendix>
+      <identifier>option.vimode_commandl_hjkl_cp</identifier>
+      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::COMMAND_L, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::COMMAND_L, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>アローの挿入</name>
+      <identifier>programing.insert_member_selection_operator</identifier>
+      <appendix>control ダブルプレスで -> を挿入</appendix>
+      <autogen>__DoublePressModifier__ KeyCode::CONTROL_L, KeyCode::CONTROL_L, KeyCode::MINUS, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
+      <appendix>shift ダブルプレスで => を挿入</appendix>
+      <autogen>__DoublePressModifier__ KeyCode::SHIFT_L, KeyCode::SHIFT_L, KeyCode::CURSOR_RIGHT, KeyCode::SPACE, KeyCode::MINUS, ModifierFlag::SHIFT_L, KeyCode::DOT, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains</only>
+      <name>Search Everywhereの起動</name>
+      <identifier>programing.search_everywhere</identifier>
+      <appendix>右シフトをダプルプレスでSearch Everywhereを起動
+(IDE側でcmd+alt+s, cmd+alt+eにSearch Everywhereを割り当てる)</appendix>
+      <autogen>
+        __DoublePressModifier__ 
+        KeyCode::SHIFT_R, KeyCode::SHIFT_R, 
+        KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L, 
+        KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <not>VIRTUALMACHINE, X11, REMOTEDESKTOPCONNECTION</not>
+      <name>JIS Yen(¥) to Backslash(\)</name>
+      <identifier>remap.jis_yen2backslash_cp</identifier>
+      <appendix>option+¥ で¥を挿入</appendix>
+      <autogen>__KeyToKey__ KeyCode::JIS_YEN, VK_OPTION, KeyCode::JIS_YEN</autogen>
+      <appendix>¥で\を挿入</appendix>
+      <autogen>__KeyToKey__ KeyCode::JIS_YEN, KeyCode::VK_JIS_BACKSLASH</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>数字キーの入れ替え</name>
+      <identifier>remap.swap_number_and_symbol_cp</identifier>
+      <appendix>1234567890 to !@#$%^&amp;*() / Shift+1234567890 to 1234567890</appendix>
+      <autogen>__KeyToKey__ KeyCode::KEY_1, ModifierFlag::NONE, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, ModifierFlag::NONE, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_3, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_4, ModifierFlag::NONE, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_5, ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_6, ModifierFlag::NONE, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_7, ModifierFlag::NONE, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_8, ModifierFlag::NONE, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_9, ModifierFlag::NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_0, ModifierFlag::NONE, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_1, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_1</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_2</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_3, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_3</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_4, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_4</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_5, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_5</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_6, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_6</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_7, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_7</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_8, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_8</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_9, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_9</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_0, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_0</autogen>
+    </item>
+
+    <item>
+      <only>JetBrains, SublimeText2</only>
+      <name>記号の簡易入力</name>
+      <identifier>remap.samples_doublepressmodifier_cp</identifier>
+      <appendix>記号キーをダブルプレスで記号を入力</appendix>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_1, KeyCode::KEY_1, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_2, KeyCode::KEY_2, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_3, KeyCode::KEY_3, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_4, KeyCode::KEY_4, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_5, KeyCode::KEY_5, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_6, KeyCode::KEY_6, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_7, KeyCode::KEY_7, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_8, KeyCode::KEY_8, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::KEY_9, KeyCode::KEY_9, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::MINUS, KeyCode::MINUS, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::JIS_BRACKET_LEFT, KeyCode::JIS_BRACKET_LEFT, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::JIS_BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__DoublePressModifier__ KeyCode::JIS_BRACKET_RIGHT, KeyCode::JIS_BRACKET_RIGHT, KeyCode::DELETE, KeyCode::DELETE, ModifierFlag::NONE, KeyCode::JIS_BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+    </item>
+
+  </item>
+</root>

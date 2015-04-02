@@ -1,0 +1,15 @@
+- name: karabiner
+  file: private.xml
+  path: ~/Library/Application Support/Karabiner
+
+- name: phpstorm
+  file: settings.jar
+  path: ~/Library/Preferences/WebIde80
+
+- name: rubymine
+  file: settings.jar
+  path: ~/Library/Preferences/RubyMine70
+
+- name: sublime-text
+  file: Preferences.sublime-settings
+  path: ~/Library/Application Support/Sublime Text 2/Packages/User
