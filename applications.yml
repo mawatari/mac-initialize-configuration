@@ -13,3 +13,7 @@
 - name: sublime-text
   file: Preferences.sublime-settings
   path: ~/Library/Application Support/Sublime Text 2/Packages/User
+
+- name: sublime-text
+  file: Default (OSX).sublime-keymap
+  path: ~/Library/Application Support/Sublime Text 2/Packages/Default 
