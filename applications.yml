@@ -1,3 +1,7 @@
+- name: iterm
+  file: com.googlecode.iterm2.plist
+  path: ~/Library/Application Support/iTerm
+
 - name: karabiner
   file: private.xml
   path: ~/Library/Application Support/Karabiner
