@@ -8,6 +8,7 @@ def initialize_configuration (application)
     case response
       when /^[yY]/
         print "\e[31m"
+        `mkdir -p #{application["path"].sub(/^~/, Dir.home).shellescape}`
         `cp #{Dir.getwd}/configurations/#{application["name"].shellescape}/#{application["file"].shellescape} #{application["path"].sub(/^~/, Dir.home).shellescape}`
         print "\e[0m"
         puts "\e[32m完了しました。\e[0m" if $?.success?
